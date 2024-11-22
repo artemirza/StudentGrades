@@ -17,6 +17,7 @@ namespace StudentsAndSubjects.Interfaces
         double AverageGrade { get; } 
         Grant Grant { get; }
 
+        public List<Student> Fill();
         void SetSubjects(List<Subject> subjects); 
         void CalculateAverageGrade(); 
         void SetGrant(); 

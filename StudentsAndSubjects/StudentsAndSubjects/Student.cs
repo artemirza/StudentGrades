@@ -19,6 +19,11 @@ namespace StudentsAndSubjects
         public double AverageGrade { get; private set; }
         public Grant Grant { get; private set; }
 
+        public Student()
+        {
+
+        }
+
         private Student(string firstName, string secondName, int age)
         {
             Id = Guid.NewGuid();
@@ -27,7 +32,7 @@ namespace StudentsAndSubjects
             Age = age;
         }
 
-        public static List<Student> Fill()
+        public List<Student> Fill()
         {
             return new List<Student>
             {

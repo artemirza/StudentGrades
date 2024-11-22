@@ -15,6 +15,11 @@ namespace StudentsAndSubjects
         public int Grade { get; set; }
         public DateTime Date { get; set; }
 
+        public Subject()
+        {
+            
+        }
+
         private Subject(string name)
         {
             Id = Guid.NewGuid();
@@ -24,9 +29,8 @@ namespace StudentsAndSubjects
             Date = DateTime.Now;
         }
 
-        public static List<Subject> Fill()
+        public List<Subject> Fill()
         {
-
             return new List<Subject> 
             {
                 new Subject("Math"),
@@ -36,10 +40,9 @@ namespace StudentsAndSubjects
                 new Subject("Chemistry"),
                 new Subject("Music")
             };
-
         }
 
-        public static Subject GetByStudentId(List<Subject> subjects, Guid studentId)
+        public Subject GetByStudentId(List<Subject> subjects, Guid studentId)
         {
             return subjects.Where(x => x.StudentId == studentId).FirstOrDefault();
         }

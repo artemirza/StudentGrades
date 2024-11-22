@@ -1,12 +1,17 @@
-﻿namespace StudentsAndSubjects
+﻿using StudentsAndSubjects.Interfaces;
+
+namespace StudentsAndSubjects
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            var students = Student.Fill();
+            IStudent studentService = new Student();
+            ISubject subjectService = new Subject();
 
-            var subjects = Subject.Fill();
+            var students = studentService.Fill();
+
+            var subjects = subjectService.Fill();
 
             foreach (var student in students)
             {
@@ -20,6 +25,7 @@
             }
 
             students[0].DisplayInfo();
+            students[1].DisplayInfo();
         }
     }
 }
